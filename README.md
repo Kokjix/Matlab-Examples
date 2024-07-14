@@ -1,4 +1,4 @@
 # Matlab-Examples
 Rigid double pendulum example as a gif:
 
-![rigid_double_pendelum](https://github.com/user-attachments/assets/58d923f3-3b39-484c-9e2e-394b23149c89)
+![rigid_double_pendelum](https://github.com/user-attachments/assets/232ee980-7800-4a72-b331-d9d8623a1ddc)
