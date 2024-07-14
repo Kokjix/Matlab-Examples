@@ -36,20 +36,20 @@ M = matlabFunction(V,'vars',{'t','Y'});
 
 sol = ode45(M,tspan,intcon);
 
-figure
+f1 = figure;
 plot(sol.x,sol.y)
 title('Solutions of Positions')
 xlabel('Time (s)')
 ylabel('Solutions [rad]')
 legend({'$\theta_2$','$\dot{\theta_2}$','$\theta_1$','$\dot{\theta_1}$'}, 'Interpreter', 'latex')
 
-x1 = @(t) L1*sin(deval(sol,t,3))/2;
-y1 = @(t) -L1*cos(deval(sol,t,3))/2;
+x1 = @(t) L1*sin(deval(sol,t,3));
+y1 = @(t) -L1*cos(deval(sol,t,3));
 
-x2 = @(t) L1*sin(deval(sol,t,3)) + (L2*sin(deval(sol,t,1))/2);
-y2 = @(t) -L1*cos(deval(sol,t,3)) - (L2*cos(deval(sol,t,1))/2);
+x2 = @(t) L1*sin(deval(sol,t,3)) + (L2*sin(deval(sol,t,1)));
+y2 = @(t) -L1*cos(deval(sol,t,3)) - (L2*cos(deval(sol,t,1)));
 
-figure
+f2 = figure;
 % fanimator(@(t) plot(x1(t),y1(t),'ro','MarkerSize',m1*10,'MarkerFaceColor','r'), 'AnimationRange', tspan);
 axis equal;
 hold on;
